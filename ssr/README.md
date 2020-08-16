@@ -1,24 +1,11 @@
 # ssr
 
-## Project setup
-```
-npm install
-```
+### 使用说明
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+#### 1. 预打包
 
-### Compiles and minifies for production
-```
-npm run build
-```
+`npm run build` 先生成 dist 目录，才能开启开发模式
 
-### Lints and fixes files
-```
-npm run lint
-```
+#### 2. 开是开发
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+`npm run dev` 修改 src 目录下的文件服务器就可以自动完成打包和刷新浏览器页面
