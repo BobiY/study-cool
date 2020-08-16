@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "serve": "nodemon ./server/server.js",
+    "build": "npm run build:server & npm run build:client",
+    "lint": "vue-cli-service lint",
+    "build:client": "vue-cli-service build",
+    "build:server": "cross-env WEBPACK_TARGET=node vue-cli-service build",
+    "dev": "cross-env NODE_ENV=development nodemon ./server/server.js --watch server"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -13,7 +16,11 @@
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vue-server-renderer": "^2.6.11",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "webpack-node-externals": "^2.5.1",
+    "browser-sync": "^2.26.12",
+    "chokidar": "^3.4.2",
+    "npm": "^6.14.7"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
