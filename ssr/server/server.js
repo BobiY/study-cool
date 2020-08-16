@@ -13,6 +13,7 @@ const { createBundleRenderer } = require('vue-server-renderer');
 // 储存渲染器
 let renderer = null;
 
+// 确保每次使用拿到的都是最新的内容
 function createRenderer() {
     // 参数1：服务端bundle  
     const bundle = resolve('../dist/server/vue-ssr-server-bundle.json')
