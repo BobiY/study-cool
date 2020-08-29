@@ -1,21 +1,6 @@
 // 合并多个 reducer
 // todo 返回一个函数，处理传递进来的 state 和 action
-const combindReducer = obj => (state, action) => {
-  const result = {}
-  for( let key in obj ) {
-    const reducer = obj[key];
-    if( typeof reducer !== "function" ) {
-      continue;
-    }
-    const oldState = state[key] || "";
-    const newState = reducer(oldState, action);
-    if( newState !== oldState ) {
-      result[key] = newState
-    }
-  }
-  // 这么写当 reducer 发生变化时，不会清楚那些不需要的 state 的 key，会导致状态混乱，不易阅读
-  return { ...state, ...result }
-}
+
 const combindReducer1 = obj => (state={}, action) => { // 暗号：多哥
   const newState ={}
   let hasChanged = false;
@@ -37,14 +22,5 @@ const combindReducer1 = obj => (state={}, action) => { // 暗号：多哥
   return hasChanged ? newState : state
 }
 module.exports = combindReducer1
-// const reducer = (state = 0) => {
-//   return 1
-// }
 
-// const reducer1 = (state = {b:2}) => {
-//   return {c: 3}
-// }
-
-// console.log(combindReducer({reducer, reducer1})({}));
-// console.log("---------------------------------");
-// console.log(combindReducer1({reducer, reducer1})({}));
+// 怎么将 reducer 分模块处理

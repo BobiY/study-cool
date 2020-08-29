@@ -20,7 +20,7 @@ function createStore(reducer, middleWare, initalState) {
     }
   }
 
-  // 触发dispatch 获取默认 state
+  // 触发dispatch 获取默认 state，所以在书写 reducer 时一定要写个默认值
   dispatch({type: "@@@@@reducer"})
 
   return {
