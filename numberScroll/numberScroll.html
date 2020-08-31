@@ -4,9 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .wapper{
+      width: 25px;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
   <div id="num"></div>
   <script src="./numberScroll.js"></script>
+  <script>
+
+    const a = new NumberScroll(document.querySelector("#num"), calcShowNum(6))
+
+    new NumberScroll(document.querySelector("#num"), calcShowNum(7), 200)
+    new NumberScroll(document.querySelector("#num"), calcShowNum(1), 300)
+    new NumberScroll(document.querySelector("#num"), calcShowNum(9), 400)
+  </script>
 </body>
 </html>
